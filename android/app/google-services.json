@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "436012541476",
+    "project_id": "blindside-f4357",
+    "storage_bucket": "blindside-f4357.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436012541476:android:2a94a9d70962b6df449ab1",
+        "android_client_info": {
+          "package_name": "com.example.blindside"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436012541476-pbprhv9rtou9v8b6orinhn36alj8ir24.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.blindside",
+            "certificate_hash": "7738e6cd65ee9817ad0ac4f8efc4afba000f0bf5"
+          }
+        },
+        {
+          "client_id": "436012541476-gtq6jgatval3n2okespj2blpf0tqui89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgrGZFjJDknGc4n9Zhej_Tt7xUHQ0xLgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436012541476-gtq6jgatval3n2okespj2blpf0tqui89.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
