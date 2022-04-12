@@ -102,9 +102,11 @@ class VideoInfoTile extends ViewModelWidget<HomeViewmodel> {
             children: [
               Expanded(
                 flex: 2,
-                child: Image.network(
-                  data.picture,
-                  fit: BoxFit.cover,
+                child: SizedBox.expand(
+                  child: Image.network(
+                    data.picture,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               Expanded(

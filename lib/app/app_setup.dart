@@ -20,6 +20,10 @@ import 'package:stacked_services/stacked_services.dart';
     LazySingleton(
         classType: AuthenticationService, asType: IAuthenticationService),
     LazySingleton(classType: VideoService, asType: IVideoService),
+    LazySingleton(
+        classType: StorageService,
+        asType: IStorageService,
+        resolveUsing: StorageService.init,),
   ],
 )
 class AppSetup {}

@@ -24,4 +24,5 @@ void setupLocator({String? environment, EnvironmentFilter? environmentFilter}) {
   locator.registerLazySingleton<IAuthenticationService>(
       () => AuthenticationService());
   locator.registerLazySingleton<IVideoService>(() => VideoService());
+  locator.registerLazySingleton<IStorageService>(() => StorageService());
 }

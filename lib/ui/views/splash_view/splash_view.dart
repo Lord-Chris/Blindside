@@ -1,8 +1,8 @@
-import 'package:blindside/app/_app.dart';
-import 'package:blindside/services/_services.dart';
 import 'package:blindside/ui/constants/_constants.dart';
 import 'package:flutter/material.dart';
-import 'package:stacked_services/stacked_services.dart';
+import 'package:stacked/stacked.dart';
+
+import 'splash_viewmodel.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({Key? key}) : super(key: key);
@@ -15,18 +15,7 @@ class _SplashViewState extends State<SplashView>
     with SingleTickerProviderStateMixin {
   Animation<double>? _animation;
   AnimationController? _animationController;
-  final _authService = locator<IAuthenticationService>();
-  final _navService = locator<NavigationService>();
-
-  Future<void> checkUserStatus() async {
-    await Future.delayed(const Duration(seconds: 1));
-    if (_authService.currentUser == null) {
-      _navService.replaceWith(Routes.loginView);
-    } else {
-      _navService.replaceWith(Routes.homeView);
-    }
-  }
-
+  final _model = SplashViewmodel();
   @override
   void initState() {
     super.initState();
@@ -39,7 +28,7 @@ class _SplashViewState extends State<SplashView>
     _animationController?.forward();
     _animation!.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        checkUserStatus();
+        _model.checkUserStatus();
       }
     });
   }
@@ -52,19 +41,24 @@ class _SplashViewState extends State<SplashView>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: RotationTransition(
-        turns: _animationController!,
-        child: SizeTransition(
-          sizeFactor: _animationController!,
-          child: const Center(
-            child: Text(
-              AppStrings.appName,
-              style: kHeaderStyle,
+    return ViewModelBuilder<SplashViewmodel>.reactive(
+        viewModelBuilder: () => _model,
+        onModelReady: (model) => model.init(),
+        builder: (context, model, __) {
+          return Scaffold(
+            body: RotationTransition(
+              turns: _animationController!,
+              child: SizeTransition(
+                sizeFactor: _animationController!,
+                child: const Center(
+                  child: Text(
+                    AppStrings.appName,
+                    style: kHeaderStyle,
+                  ),
+                ),
+              ),
             ),
-          ),
-        ),
-      ),
-    );
+          );
+        });
   }
 }

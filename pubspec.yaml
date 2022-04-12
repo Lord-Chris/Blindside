@@ -28,10 +28,12 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.2
-  firebase_auth: 
-  firebase_core: 
+  firebase_auth: null
+  firebase_core: null
   flutter:
     sdk: flutter
+  get_storage: ^2.0.3
+  shared_preferences: ^2.0.13
   stacked: ^2.3.0
   stacked_services: ^0.8.17
 
@@ -65,26 +67,25 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-  - family: GTWalsheimPro
-    fonts:
-      - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-Black.ttf
-      - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-BlackOblique.ttf
-      - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-Bold.ttf
-      - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-BoldOblique.ttf
-      - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-CondensedBlack.ttf
-      - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-CondensedBlackOblique.ttf
-      - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-CondensedBold.ttf
-      - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-CondensedBoldOblique.ttf
-      - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-CondensedUltraBold.ttf
-      - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-CondensedUltraBoldOblique.ttf
-      - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-UltraBold.ttf
-      - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-UltraBoldOblique.ttf
-
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+    - family: GTWalsheimPro
+      fonts:
+        - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-Black.ttf
+        - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-BlackOblique.ttf
+        - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-Bold.ttf
+        - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-BoldOblique.ttf
+        - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-CondensedBlack.ttf
+        - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-CondensedBlackOblique.ttf
+        - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-CondensedBold.ttf
+        - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-CondensedBoldOblique.ttf
+        - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-CondensedUltraBold.ttf
+        - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-CondensedUltraBoldOblique.ttf
+        - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-UltraBold.ttf
+        - asset: assets/fonts/GTWalsheimPro/GTWalsheimPro-UltraBoldOblique.ttf
+    #   - family: Trajan Pro
+    #     fonts:
+    #       - asset: fonts/TrajanPro.ttf
+    #       - asset: fonts/TrajanPro_Bold.ttf
+    #         weight: 700
+    #
+    # For details regarding fonts from package dependencies,
+    # see https://flutter.dev/custom-fonts/#from-packages
