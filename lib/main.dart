@@ -1,4 +1,5 @@
 import 'package:blindside/app/_app.dart';
+import 'package:blindside/core/mixins/toast_mixin.dart';
 import 'package:blindside/ui/constants/_constants.dart';
 import 'package:blindside/ui/views/splash_view/splash_view.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.brown,
       ),
+      scaffoldMessengerKey: ToastMixin.scaffoldkey,
       home: const SplashView(),
       navigatorKey: StackedService.navigatorKey,
       onGenerateRoute: StackedRouter().onGenerateRoute,

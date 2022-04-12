@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: must_be_immutable
 
 import 'package:blindside/ui/constants/_constants.dart';
+import 'package:flutter/material.dart';
 
 class AppTextField extends StatelessWidget {
   final String? label;
@@ -16,7 +17,7 @@ class AppTextField extends StatelessWidget {
   bool? obscureText;
   final int? maxLines;
 
-   AppTextField({
+  AppTextField({
     Key? key,
     this.label,
     this.hint,
@@ -28,9 +29,9 @@ class AppTextField extends StatelessWidget {
     this.prefix,
     this.keyboardType,
     this.textCapitalization,
-     this.obscureText,
-     this.maxLines,
-  }) : assert(initialValue == null || controller == null),
+    this.obscureText,
+    this.maxLines,
+  })  : assert(initialValue == null || controller == null),
         super(key: key);
 
   @override

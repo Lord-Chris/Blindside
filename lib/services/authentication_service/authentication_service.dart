@@ -1,3 +1,4 @@
+import 'package:blindside/core/models/_models.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'i_authentication_service.dart';
@@ -11,14 +12,14 @@ class AuthenticationService implements IAuthenticationService {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        throw Exception('User not found');
+        throw Failure('User not found');
       } else if (e.code == 'wrong-password') {
-        throw Exception('Wrong password');
+        throw Failure('Wrong password');
       } else {
-        throw Exception('Something went wrong');
+        throw Failure('Something went wrong');
       }
     } catch (e) {
-      throw Exception('Something went wrong');
+      throw Failure('Something went wrong');
     }
   }
 
@@ -29,16 +30,16 @@ class AuthenticationService implements IAuthenticationService {
           email: email, password: password);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
-        throw Exception('Email already in use');
+        throw Failure('Email already in use');
       } else if (e.code == 'invalid-email') {
-        throw Exception('Invalid email');
+        throw Failure('Invalid email');
       } else if (e.code == 'weak-password') {
-        throw Exception('Weak password');
+        throw Failure('Weak password');
       } else {
-        throw Exception('Something went wrong');
+        throw Failure('Something went wrong');
       }
     } catch (e) {
-      throw Exception('Something went wrong');
+      throw Failure('Something went wrong');
     }
   }
 

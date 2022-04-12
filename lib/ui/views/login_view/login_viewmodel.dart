@@ -1,5 +1,6 @@
 import 'package:blindside/app/_app.dart';
 import 'package:blindside/core/mixins/toast_mixin.dart';
+import 'package:blindside/core/models/_models.dart';
 import 'package:blindside/services/_services.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -16,8 +17,8 @@ class LoginViewmodel extends BaseViewModel with ToastMixin {
       await _authService.signInWithEmailAndPassword(email, password);
       setBusy(false);
       _navService.replaceWith(Routes.homeView);
-      showSuccessToast("Login was Successful!");
-    } on Exception catch (e) {
+      showSuccessToast("Login Successful!");
+    } on Failure catch (e) {
       setBusy(false);
       showFailureToast(e.toString());
     }
